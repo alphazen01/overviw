@@ -41,7 +41,7 @@ class Profile extends StatelessWidget {
             
             ),
             Text(
-              "Flutter Developer",
+              "Flutter eveloper",
               style: TextStyle(color: Colors.white,
               letterSpacing: 5,
               ),

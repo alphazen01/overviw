@@ -6,6 +6,7 @@ class ContacList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: Drawer(
+        
        child: Column(
          children: [
            Stack(
@@ -79,8 +80,11 @@ class ContacList extends StatelessWidget {
         
        Padding(
          padding: const EdgeInsets.only(right: 25),
-         child: IconButton(onPressed: (){}, 
-         icon: Icon(Icons.more_vert)),
+         child: IconButton(
+          onPressed: (){
+            Navigator.pop(context);
+          }, 
+         icon: Icon(Icons.arrow_back_ios)),
        ),
         
       ],
