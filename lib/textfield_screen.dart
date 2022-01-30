@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:project/contact_list.dart';
 import 'package:project/pofile.dart';
+import 'package:project/theme_controller.dart';
 
 class TextfieldScreen extends StatefulWidget {
   const TextfieldScreen({ Key? key }) : super(key: key);
@@ -13,11 +15,26 @@ class _TextfieldScreenState extends State<TextfieldScreen> {
   bool isTap=false;
   bool isTap2=false;
   bool isTap3=false;
+  final ThemeController themeController=Get.put(ThemeController());
   TextEditingController textEditingController=TextEditingController();
  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+       actions: [
+         ObxValue(
+           (data)=> Switch(
+             value: themeController.isDark.value, 
+             onChanged: (value){
+               themeController.isDark.value=value;
+               themeController.changeAppTheme( themeController.isDark.value);
+             },
+            ),
+            false.obs
+         )
+       ],
+      ),
       body: Padding(
         padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
         child: Column(
